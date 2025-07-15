@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "zysays",
+  "version": "1.0.0",
+  "action": { "default_popup": "index.html" },
+  "description": "Automatically renders local Markdown files as HTML using remark/rehype.",
+  "permissions": [],
+  "host_permissions": ["file://*/*"],
+  "content_scripts": [
+    {
+      "matches": ["file://*/*.md", "file://*/*.markdown", "file://*/*.mdown"],
+      "js": ["src/content.js", "core/rippleEffect.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["style.css", "fonts/*"],
+      "matches": ["file://*/*"]
+    }
+  ],
+  "icons": {
+    "32": "icon32.png",
+    "48": "icon48.png",
+    "64": "icon64.png",
+    "96": "icon96.png",
+    "128": "icon128.png"
+  }
+}

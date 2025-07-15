@@ -1,0 +1,547 @@
+/* (Hopefully) Hides the scrollbar universally */
+:root,
+html,
+body {
+  scrollbar-width: none !important;
+  scrollbar-color: unset !important;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* ZedPlex Sans Font Family Configuration */
+@font-face {
+  font-family: "ZedPlex Sans";
+  src: url("./fonts/zed/ZedPlexSans-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "ZedPlex Sans";
+  src: url("./fonts/zed/ZedPlexSans-ThinItalic.ttf") format("truetype");
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "ZedPlex Sans";
+  src: url("./fonts/zed/ZedPlexSans-ExtraLight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "ZedPlex Sans";
+  src: url("./fonts/zed/ZedPlexSans-ExtraLightItalic.ttf") format("truetype");
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "ZedPlex Sans";
+  src: url("./fonts/zed/ZedPlexSans-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "ZedPlex Sans";
+  src: url("./fonts/zed/ZedPlexSans-LightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "ZedPlex Sans";
+  src: url("./fonts/zed/ZedPlexSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "ZedPlex Sans";
+  src: url("./fonts/zed/ZedPlexSans-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "ZedPlex Sans";
+  src: url("./fonts/zed/ZedPlexSans-Text.ttf") format("truetype");
+  font-weight: 450;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "ZedPlex Sans";
+  src: url("./fonts/zed/ZedPlexSans-TextItalic.ttf") format("truetype");
+  font-weight: 450;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "ZedPlex Sans";
+  src: url("./fonts/zed/ZedPlexSans-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "ZedPlex Sans";
+  src: url("./fonts/zed/ZedPlexSans-MediumItalic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "ZedPlex Sans";
+  src: url("./fonts/zed/ZedPlexSans-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "ZedPlex Sans";
+  src: url("./fonts/zed/ZedPlexSans-SemiBoldItalic.ttf") format("truetype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "ZedPlex Sans";
+  src: url("./fonts/zed/ZedPlexSans-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "ZedPlex Sans";
+  src: url("./fonts/zed/ZedPlexSans-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  --fonts-default: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
+    Arial, sans-serif;
+  --fonts-mono-default: "SFMono-Regular", Consolas, "Liberation Mono", Menlo,
+    Courier, monospace;
+  --fonts-sans: "Satoshi", "Symbols Nerd Font", sans-serif;
+  --fonts-mono: "SauceCodePro Nerd Font", "SF Mono", "Andale Mono", Menlo,
+    "Symbols Nerd Font", monospace;
+
+  --fg: #ffffffe9;
+  --bg: #0d1117;
+  --bg-pre: #09090a;
+  --bg-code: #09090a;
+
+  --pen: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAQAAADZc7J/AAAACXBIWXMAAA4mAAAOJgGi7yX8AAACdklEQVRIie2UXUhTYRjH/8975naaZ+es+UErRNsYYmGYFIVdiBgiRBTIrrqIihIL6qKLyCAGkXWXNQ0ZfVhBYHpXN0EkJkmNxIy1Srww0GRrrtmcijs7bxcrSrJ5Ttc+l+/L++P3PP+Xh4J++4Q07XwZWyiKcgKIw1CZQhOlZ2XrF8XR//Um9XHiZAzBUremBr/nx9TJ2khHLBB3EufEST+AgMZtzYMFUpoTFFYYlK4V9BhphR6xNI8ec50p2pLWNLKQY6b4CS46JvVCCACBt1dYrlTWsfwMOBRW8EZqtz/Uh2AA+H5KfGw5OHouHhbJxJPadHXseuL+bImeefy89hHg453lQltVvSCpAGS2fth6w/5gNY8/+FlI1wnXyeJKlWdghmPW/pS12iZyQZYJZhEBD2vbvlewqSAuM+Wtxa90G8jFRz4CAkefjYQzo+kR9b06FU/2JN3AyvNY4SjrcdvNLu9oEGQVgEzSO9Ev3THscffwwPB4JqyG1DE18i3VN+/52+OfIWU97pXh0q5GwaGCc5lsobxOa2C5R86UfQTUKKa2vIqSWpVnYOHynPgc562ffkNYLkAN9tCiy0bOyRcdiIrQKC4lD2h9iy3EgWwrq/yzfCpi/k324xvLIwlyl9YtcY2boaTM/bxVDOsAABdojHq1gX1Kk2J+Hd/dZN6ggmsyEz9Ql9ihAwAAXgZ+2mlqdlZEE9jsql+CpuVBmafHlkM6V4eXQL3aUKPNK4nDMzuPyOsWOAmmSHqroA8QRph72avx6uBCmcc9p6Y+F5aaltLd8QEDy+uXx2ADK5wZ0k55nOmrVSEj77MQBsod/lqt1X/UD34hA09PufYiAAAAAElFTkSuQmCC"),
+    auto;
+}
+
+/* Global Standards, Miscellaneous */
+body {
+  display: block;
+  text-rendering: optimizeLegibility;
+  font-family: var(--fonts-sans);
+  line-height: 1.5;
+  color: var(--fg);
+  max-width: 850px;
+  margin: 40px auto;
+  padding: 0 20px;
+  background-color: var(--bg);
+  cursor: var(--pen);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  border-bottom: 1px solid #eaecef40;
+  padding-bottom: 0.3em;
+  margin-top: 24px;
+  margin-bottom: 16px;
+  font-weight: 520;
+}
+h1:hover,
+h2:hover,
+h3:hover,
+h4:hover,
+h5:hover,
+h6:hover {
+  cursor: var(--pen);
+}
+.heading-anchor-link {
+  position: absolute;
+  left: -1em;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  color: var(--link-color);
+  text-decoration: none;
+  font-size: 0.8em;
+  padding: 0 0.25em;
+}
+
+h1:hover .heading-anchor-link,
+h2:hover .heading-anchor-link,
+h3:hover .heading-anchor-link,
+h4:hover .heading-anchor-link,
+h5:hover .heading-anchor-link,
+h6:hover .heading-anchor-link {
+  opacity: 1;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table,
+pre {
+  margin-top: 0;
+  margin-bottom: 16px;
+  cursor: var(--pen);
+}
+p:hover,
+blockquote:hover,
+ul:hover,
+ol:hover,
+dl:hover,
+table:hover,
+pre:hover {
+  cursor: var(--pen);
+}
+h1 {
+  color: #7abbe3e0;
+}
+h4 {
+  color: bisque;
+  font-style: italic;
+}
+em {
+  color: bisque;
+}
+
+/* Codeblocks & Blocks of Code */
+pre > code.hljs {
+  color: #cccccc;
+  background: #09090a;
+  cursor: var(--pen);
+}
+code {
+  color: #e8b286d1;
+  font-family: var(--fonts-mono);
+  padding: 0.2em 0.4em;
+  margin: 0;
+  font-size: 95%;
+  font-weight: 475px;
+  background-color: var(--bg-code);
+  border-radius: 5px;
+}
+pre {
+  text-wrap: auto;
+  width: fit-content;
+  max-width: 90%;
+  padding: 9px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: var(--bg-pre);
+  border-radius: 13px;
+  margin-left: 2.75em;
+  margin-right: 2.75em;
+  padding-right: 1em;
+  box-shadow: #02020220 4px 4px 4px 4px;
+}
+pre code {
+  padding: 0;
+  margin: 0;
+  background-color: var(--bg-pre);
+  border: 0;
+}
+.language-icon {
+  font-size: 1.1em;
+  color: #ffffffaa;
+}
+#copyicon {
+  height: 17px;
+  color: #ccc;
+}
+#copysuccess {
+  height: 17px;
+  color: rgb(237, 230, 93);
+}
+
+/* Regular URL Links */
+a {
+  color: #008ac9bb;
+  text-decoration: none;
+  transition: all 125ms ease;
+  cursor: var(--pen);
+}
+a:hover {
+  text-decoration: none;
+  color: #008ac9;
+  cursor: var(--pen);
+}
+
+/* Tabular Objects */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+table,
+th,
+td {
+  border: 1px solid #dfe2e5;
+}
+th,
+td {
+  padding: 6px 13px;
+}
+table > * {
+  cursor: var(--pen);
+}
+
+/* Blockquotes and Callouts */
+blockquote {
+  padding: 0 1em;
+  color: #6a737d;
+  border-left: 0.25em solid #c7d9ec;
+}
+
+/* And More Miscellaneous */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 13px;
+  box-shadow: #02020220 4px 4px 4px 4px;
+}
+ins {
+  text-decoration: underline;
+}
+sup,
+sub {
+  line-height: 0;
+}
+/* Text transformation styles */
+mark {
+  background-color: #f8e95ea8;
+  padding: 0.1em 0.2em;
+  border-radius: 2px;
+}
+
+.suptext,
+sup.suptext {
+  font-size: 0.75em;
+  vertical-align: super;
+  color: #2196f3;
+}
+
+.subtext,
+sub.subtext {
+  font-size: 0.75em;
+  vertical-align: sub;
+  color: #ff5722;
+}
+
+mark {
+  background-color: #f8e95ecc;
+  color: #000;
+  font-weight: 550;
+}
+
+.suptext,
+sup.suptext {
+  color: #64b5f6;
+}
+
+.subtext,
+sub.subtext {
+  color: #ff8a65;
+}
+
+/* Copy button styles */
+.copy-code-button {
+  position: static;
+  float: right;
+  padding: 4px 8px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 7px;
+  cursor: var(--pen);
+  font-size: 12px;
+  opacity: 0.4;
+  transition: all 350ms ease;
+}
+.copy-code-button:hover {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.9);
+}
+.copy-code-button.copied {
+  background: #4caf50;
+}
+/* === Feature 6: Admonitions & Alerts === */
+.admonition {
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  border-left: 5px solid;
+  border-radius: 4px;
+}
+
+.admonition-title {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "ZedPlexSans-Bold";
+}
+
+.admonition > :last-child {
+  margin-bottom: 0; /* Fix extra space at the bottom */
+}
+
+.admonition-note {
+  background-color: var(--admonition-note-bg);
+  border-color: var(--admonition-note-border);
+}
+.admonition-note .admonition-title {
+  color: var(--admonition-note-border);
+}
+
+.admonition-tip,
+.admonition-important,
+.admonition-success {
+  background-color: var(--admonition-tip-bg);
+  border-color: var(--admonition-tip-border);
+}
+.admonition-tip .admonition-title,
+.admonition-important .admonition-title,
+.admonition-success .admonition-title {
+  color: var(--admonition-tip-border);
+}
+
+.admonition-warning,
+.admonition-caution {
+  background-color: var(--admonition-warning-bg);
+  border-color: var(--admonition-warning-border);
+}
+.admonition-warning .admonition-title,
+.admonition-caution .admonition-title {
+  color: var(--admonition-warning-border);
+}
+
+.admonition-danger,
+.admonition-error {
+  background-color: var(--admonition-danger-bg);
+  border-color: var(--admonition-danger-border);
+}
+.admonition-danger .admonition-title,
+.admonition-error .admonition-title {
+  color: var(--admonition-danger-border);
+}
+/* Selected Text Background Color */
+::selection {
+  color: #008ac9;
+  background-color: #91919120 !important;
+}
+::-moz-selection {
+  color: #008ac9;
+  background-color: #91919120 !important;
+}
+
+/* ------------------------------------ */
+/* ------------HIGHLIGHT JS------------ */
+/* ------------------------------------ */
+pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
+}
+code.hljs {
+  padding: 3px 5px;
+}
+.hljs {
+  color: #7aafe4;
+  background: #09090a;
+}
+.hljs-doctag,
+.hljs-keyword,
+.hljs-meta .hljs-keyword,
+.hljs-template-tag,
+.hljs-template-variable,
+.hljs-type,
+.hljs-variable.language_ {
+  color: #bf3f4c;
+}
+.hljs-title,
+.hljs-title.class_,
+.hljs-title.class_.inherited__,
+.hljs-title.function_ {
+  color: #6f42c1;
+}
+.hljs-attr,
+.hljs-attribute,
+.hljs-literal,
+.hljs-meta,
+.hljs-number,
+.hljs-operator,
+.hljs-selector-attr,
+.hljs-selector-class,
+.hljs-selector-id,
+.hljs-variable {
+  color: #005cc5;
+}
+.hljs-meta .hljs-string,
+.hljs-regexp,
+.hljs-string {
+  color: #054288;
+}
+.hljs-built_in,
+.hljs-symbol {
+  color: #e36209;
+}
+.hljs-code,
+.hljs-comment,
+.hljs-formula {
+  color: #6a737d;
+}
+.hljs-name,
+.hljs-quote,
+.hljs-selector-pseudo,
+.hljs-selector-tag {
+  color: #22863a;
+}
+.hljs-subst {
+  color: #24292e;
+}
+.hljs-section {
+  color: #005cc5;
+  font-weight: 700;
+}
+.hljs-bullet {
+  color: #735c0f;
+}
+.hljs-emphasis {
+  color: #24292e;
+  font-style: italic;
+}
+.hljs-strong {
+  color: #24292e;
+  font-weight: 700;
+}
+.hljs-addition {
+  color: #22863a;
+  background-color: #f0fff4;
+}
+.hljs-deletion {
+  color: #b31d28;
+  background-color: #ffeef0;
+}
